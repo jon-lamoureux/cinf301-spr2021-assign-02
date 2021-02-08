@@ -15,3 +15,12 @@ function putCookie(form) {
   window.location.replace("post.html");
   return true;
 }
+function getCookie(cookName, vname) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${cookName}=`);
+  if (parts.length === 2) {
+    document.getElementById(vname).innerHTML = parts.pop().split(';').shift();
+    return parts.pop().split(';').shift();
+  }
+  return "";
+}
