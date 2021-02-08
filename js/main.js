@@ -19,8 +19,9 @@ function getCookie(cookName, vname) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${cookName}=`);
   if (parts.length === 2) {
-    document.getElementById(vname).innerHTML = parts.pop().split(';').shift();
+    document.getElementById(vname).innerHTML = parts.pop().split(';').shift().replace(/%20/g, " ");
     return parts.pop().split(';').shift();
   }
+
   return "";
 }
