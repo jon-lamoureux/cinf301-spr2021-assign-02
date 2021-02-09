@@ -50,9 +50,9 @@
                   <h6>by <span id="pUser"></span>, <span id="date"></span></h6>
                   <p style="padding: 10px 0;"><span id="pContent"></span></p>
                   <script type="text/javascript">
-                    getCookie("postTitle", "pTitle");
-                    getCookie("postUser", "pUser");
-                    getCookie("postContent", "pContent");
+                    fetchData("title", "pTitle");
+                    fetchData("username", "pUser");
+                    fetchData("content", "pContent");
                     n =  new Date();
                     y = n.getFullYear();
                     m = n.getMonth() + 1;

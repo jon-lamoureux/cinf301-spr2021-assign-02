@@ -25,3 +25,15 @@ function getCookie(cookName, vname) {
 
   return "";
 }
+function passURL(form) {
+  postTitle = form[0].posttitle.value;
+  postUser = form[0].postuser.value;
+  postContent = form[0].postcontent.value;
+  window.location.replace("post.html?title=" + postTitle + "&username="+ postUser + "&content=" + postContent + "");
+  return true;
+}
+function fetchData(cookName, vname) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  document.getElementById(vname).innerHTML = urlParams.get(cookName).replace(/%20/g, " ");
+}
